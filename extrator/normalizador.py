@@ -7,4 +7,5 @@ class Normalizador:
         for letra in texto_nfd:
                 if unicodedata.combining(letra) == 0:
                     caracteres_filtrados.append(letra)
-        return "".join(caracteres_filtrados).lower() 
+        texto_limpo = "".join(caracteres_filtrados).lower()
+        return " ".join(texto_limpo.split())
