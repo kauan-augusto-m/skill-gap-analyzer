@@ -2,7 +2,7 @@ import unicodedata
 
 class Normalizador:
     # 1. Definimos as configurações de símbolos (dados separados do comportamento)
-    SIMBOLOS_INICIO = "-'\"([{•"
+    SIMBOLOS_INICIO = "-'\"([{•+#"
     SIMBOLOS_FIM = ".,;:!?'\")}]"
 
     def normalizar(self, entrada):

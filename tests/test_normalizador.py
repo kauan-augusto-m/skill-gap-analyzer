@@ -36,6 +36,8 @@ CASOS_TESTE = [
     ("front-end", "front-end"),
     ("CI/CD", "ci/cd"),
     ("Stack; banco: PostgreSQL! 'Redis'?", "stack banco postgresql redis"),
+    ("+ Python", "python"),
+    ("# Python", "python"),
 ]
 
 @pytest.mark.parametrize("entrada, esperado", CASOS_TESTE)
