@@ -8,6 +8,13 @@ class DicionarioHabilidades:
             for termo in termos:
                 termo_norm = normalizador.normalizar(termo)
                 if termo_norm:
+                    canonico_existente = self._indice.get(termo_norm)
+                    if canonico_existente is not None and canonico_existente != nome_canonico:
+                        raise ValueError(
+                            f"Conflito no termo '{termo_norm}': "
+                            f"'{canonico_existente}' e '{nome_canonico}'"
+                        )
+
                     qtd_palavras = len(termo_norm.split())
                     self._tamanho_maximo_janela = max(
                         self._tamanho_maximo_janela, qtd_palavras
